@@ -36,8 +36,7 @@ A API de Cadastro de Clientes segue uma estrutura organizada, dividida em camada
 
 1. Clone o Projeto:
    ```shell
-   git clone https://github.com/arthurmoraes1/ThomasGreag.git
-	
+   git clone https://github.com/arthurmoraes1/ThomasGreg.git
 2. **Configure a Conexão com o Banco de Dados:**
 
 * Abra o arquivo appsettings.json.
