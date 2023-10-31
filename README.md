@@ -34,14 +34,26 @@ A API de Cadastro de Clientes segue uma estrutura organizada, dividida em camada
 
 ## Como Rodar a Aplicação
 
-1. Clone o projeto com o comando:
-	git clone https://github.com/arthurmoraes1/ThomasGreag.git
+1. Clone o Projeto:
+   ```shell
+   git clone https://github.com/arthurmoraes1/ThomasGreag.git
 	
-	
-2. Atualize a string de conexão no arquivo `appsettings.json` para sua própria conexão com o banco de dados.
+2. **Configure a Conexão com o Banco de Dados:**
 
-3. Inicie a aplicação. Ambos os projetos (API e projeto WEB) serão iniciados automaticamente. O Entity Framework executará as migrações, criando tabelas e procedimentos no banco de dados.
+* Abra o arquivo appsettings.json.
+* Atualize a string de conexão para refletir as configurações do seu próprio banco de dados.
 
-4. Para fazer login na aplicação, utilize as credenciais de teste: usuário "Administrador" e senha "password". Após o login, você terá acesso ao CRUD de cadastro de clientes e logradouros.
+3. **Configuração de Inicialização do Projeto:**
+
+* No Visual Studio, clique com o botão direito na Solution e selecione "Propriedades".
+* Na barra lateral, vá para "Common Properties".
+* Em "Startup Project", selecione "Multiple startup projects".
+* Configure os projetos "Api" e "Ui" para iniciar.
+* Execute a aplicação. O Entity Framework executará as migrações, criando tabelas e procedimentos no banco de dados.
+
+4. **Login de Teste:**
+
+* Para acessar a aplicação, utilize as credenciais de teste: usuário "Administrador" e senha "password".
+* Após o login, você terá acesso ao CRUD de cadastro de clientes e logradouros.
 
 Para dúvidas ou suporte, entre em contato pelo e-mail [arthurmmoraes@hotmail.com].
