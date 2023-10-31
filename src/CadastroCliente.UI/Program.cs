@@ -33,10 +33,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.ExpireTimeSpan = TimeSpan.Zero;
-    });
+    .AddCookie();
 
 var app = builder.Build();
 

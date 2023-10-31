@@ -41,7 +41,7 @@ namespace CadastroCliente.Application.Services
             }
         }
 
-        public async Task<bool> CreateClienteAsync(ClienteDto cliente)
+        public async Task<HttpResponseMessage> CreateClienteAsync(ClienteDto cliente)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace CadastroCliente.Application.Services
 
                 var response = await _httpClient.PostAsJsonAsync(api, cliente);
 
-                return response.IsSuccessStatusCode;
+                return response;
             }
             catch (Exception)
             {

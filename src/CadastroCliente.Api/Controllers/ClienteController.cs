@@ -62,6 +62,14 @@ namespace CadastroCliente.Api.Controllers
                 if (existeCliente == null)
                     return NotFound();
 
+                bool isEmailUnique = await _clienteApplication.IsEmailUnique(cliente.Email);
+
+                if (!isEmailUnique)
+                {
+                    return BadRequest(new { message = "O endereço de e-mail já está em uso." });
+                }
+
+
                 await _clienteApplication.Update(id, clienteMap);
 
                 return Ok();

@@ -6,6 +6,13 @@
 
 <h1>Cadastro de Cliente</h1>
 
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Erro"]
+    </div>
+}
+
 <hr />
 <div class="row">
     <div class="col-md-4">

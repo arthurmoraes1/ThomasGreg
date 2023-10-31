@@ -6,7 +6,7 @@ namespace CadastroCliente.Domain.Interfaces.Services
     {
         Task<ClienteDto> GetByIdAsync(Guid id);
         Task<IEnumerable<ClienteDto>> GetClientesAsync();
-        Task<bool> CreateClienteAsync(ClienteDto cliente);
+        Task<HttpResponseMessage> CreateClienteAsync(ClienteDto cliente);
         Task<bool> UpdateClienteAsync(Guid clienteId, ClienteDto cliente);
         Task<bool> DeleteClienteAsync(Guid clienteId);
     }

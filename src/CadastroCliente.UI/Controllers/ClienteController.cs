@@ -1,6 +1,9 @@
 ﻿using CadastroCliente.Domain.Dtos;
 using CadastroCliente.Domain.Interfaces.Services;
+using CadastroCliente.UI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace CadastroCliente.UI.Controllers
 {
@@ -31,12 +34,17 @@ namespace CadastroCliente.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var success = await _clienteService.CreateClienteAsync(clienteDto);
+                var response = await _clienteService.CreateClienteAsync(clienteDto);
 
-                if (success)
+                if (response.IsSuccessStatusCode)
                 {
                     TempData["Sucesso"] = "Cliente salvo com sucesso.";
                     return RedirectToAction("Index");
+                }
+                else if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<ErrorViewModel>(await response.Content.ReadAsStringAsync());
+                    TempData["Erro"] = errorResponse.Message; 
                 }
                 else
                 {

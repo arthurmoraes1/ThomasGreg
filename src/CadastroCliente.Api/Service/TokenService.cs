@@ -18,9 +18,10 @@ namespace CadastroCliente.Api.Service
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, usuario.Login),
+                    new Claim(ClaimTypes.Name, usuario.Login),
                     new Claim(ClaimTypes.Role, usuario.Role)
                 }),
-                Expires = DateTime.MinValue,
+                Expires = DateTime.UtcNow.AddMinutes(90),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
